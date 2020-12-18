@@ -1,72 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Banner test</title>
+  <title>Сравнение виджетов для сайта Автокод</title>
+  <link rel="stylesheet" type="text/css" href="https://pp.avtocod.ru/banner.assets/avtocod_form.css">
   <style>
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 50px auto;
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h4 {
+      color: gray;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+
+    .avtocod-form__toggle-btn {
+      background: dodgerblue;
+    }
+
+    .first-banner,
+    .second-banner {
+      background: #dedede;
+      min-height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .second-banner {
+      background: #f6f6f6;
     }
   </style>
 </head>
 <body>
-
-  <div class="container">
-
-    <html>
-    <head>
-      <title></title>
-      <meta charset="utf-8">
-      <link rel="stylesheet" type="text/css" href="https://pp.avtocod.ru/banner.assets/avtocod_form.css">
-      <link rel="stylesheet" type="text/css" href="mediaservice.css">
-    </head>
-    <body>
+  <div class="first-banner">
+    <h4>Баннер первой версии. На него влияют внешние стили.</h4>
     <form target="_blank" class="avtocod-form" action="https://avtocod.ru/?a_aid=test1&chan=">
       <div class="avtocod-form__header">Проверить историю авто на сервисе Автокод</div>
       <div class="avtocod-form__body">
-            <span>
-                <input type="button" value="VIN" class="avtocod-form__toggle-btn avtocod-form__toggle-btn_vin avtocod-form__toggle-btn_active">
-                <input type="button" value="Госномер" class="avtocod-form__toggle-btn avtocod-form__toggle-btn_grz">
-            </span>
+          <span>
+              <input type="button" value="VIN" class="avtocod-form__toggle-btn avtocod-form__toggle-btn_vin avtocod-form__toggle-btn_active">
+              <input type="button" value="Госномер" class="avtocod-form__toggle-btn avtocod-form__toggle-btn_grz">
+          </span>
         <span>
-                <input class="avtocod-form__input" placeholder="JN1WNYD21U0000001">
-                <div class="arrow-box">
-                    <div class="arrow-box__text arrow-box__text_hidden">
-                        <div>Неверный формат VIN</div>
-                        VIN — уникальный идентификационный номер автомобиля. Содержит информацию о годе выпуска, производителе и    характеристиках автомобиля. Состоит из 17 символов (латинские буквы и цифры).
-                    </div>
-                    <div class="arrow-box__text arrow-box__text_hidden">
-                        <div>Неверный формат госномера</div>
-                        Госномер — индивидуальный регистрационный знак автомобиля. Состоит из букв, цифр и регионального кода.
-                    </div>
-                </div>
-            </span>
+              <input class="avtocod-form__input" placeholder="JN1WNYD21U0000001">
+              <div class="arrow-box">
+                  <div class="arrow-box__text arrow-box__text_hidden">
+                      <div>Неверный формат VIN</div>
+                      VIN — уникальный идентификационный номер автомобиля. Содержит информацию о годе выпуска, производителе и    характеристиках автомобиля. Состоит из 17 символов (латинские буквы и цифры).
+                  </div>
+                  <div class="arrow-box__text arrow-box__text_hidden">
+                      <div>Неверный формат госномера</div>
+                      Госномер — индивидуальный регистрационный знак автомобиля. Состоит из букв, цифр и регионального кода.
+                  </div>
+              </div>
+          </span>
         <span>
-                <input class="avtocod-form__submit-btn" type="submit" name="" value="Проверить" disabled="">
-            </span>
+              <input class="avtocod-form__submit-btn" type="submit" name="" value="Проверить" disabled="">
+          </span>
       </div>
     </form>
-    <div>
-      <avtocod-widget></avtocod-widget>
-      <script defer src='https://pp.avtocod.ru/banner.assets/avtocod_form_v2.js'></script>
-    </div>
-    <!--<script type="text/javascript" src="https://pp.avtocod.ru/banner.assets/avtocod_form_grz.js"></script>-->
-    <!--<script type="text/javascript" src="https://pp.avtocod.ru/banner.assets/avtocod_form.js"></script>-->
-    <!-- путь до скрипта на сервере:/web/pp.avtocod.new.ru/banner.assets. Есть старый и новый. Некоторые клиенты используют старый. Менять код в обоих файлах -->
-    <script src="avtocod_form.js"></script>
-    </body>
-    </html>
-
-
-
-
-
   </div>
 
+  <div class="second-banner">
+    <h4>Баннер второй версии. На него внешние стили не влияют.</h4>
+    <avtocod-widget></avtocod-widget>
+  </div>
+  <script type="text/javascript" src="https://pp.avtocod.ru/banner.assets/avtocod_form_grz.js"></script>
+  <script defer src='https://pp.avtocod.ru/banner.assets/avtocod_form_v2.js'></script>
+  <!--<script type="text/javascript" src="https://pp.avtocod.ru/banner.assets/avtocod_form.js"></script>-->
+  <!-- путь до скрипта на сервере:/web/pp.avtocod.new.ru/banner.assets. Есть старый и новый. Некоторые клиенты используют старый. Менять код в обоих файлах -->
+  <!-- <script src="avtocod_form.js"></script> -->
 </body>
 </html>
